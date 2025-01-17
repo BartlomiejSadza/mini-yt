@@ -1,17 +1,26 @@
-import { Text, View, StyleSheet } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function Index() {
+import HomeScreen from "screens/HomeScreen";
+
+const Stack = createNativeStackNavigator();
+export default function App() {
 	return (
-		<View style={styles.container}>
-			<Text>Edit app/index.tsx to edit this screen.</Text>
-		</View>
+		<Stack.Group screenOptions={{ headerLargeTitle: true }}>
+			<Stack.Screen
+				name='Home'
+				component={HomeScreen}
+				options={{ title: "Home" }}
+			/>
+			<Stack.Screen
+				name='Search'
+				component={SearchScreen}
+				options={{ title: "Search Videos" }}
+			/>
+			<Stack.Screen
+				name='Detail'
+				component={DetailScreen}
+				options={{ title: "Video Details" }}
+			/>
+		</Stack.Group>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
-	},
-});

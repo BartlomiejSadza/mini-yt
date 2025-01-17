@@ -22,5 +22,7 @@ module.exports = {
 	rules: {
 		"react-native/no-inline-styles": "warn",
 		"react-native/sort-styles": "off",
+
+		"import/no-unresolved": "off",
 	},
 };
