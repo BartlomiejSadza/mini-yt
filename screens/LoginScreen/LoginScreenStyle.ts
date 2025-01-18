@@ -4,26 +4,34 @@ import Colors from "../../styles/Colors";
 const LoginScreenStyle = StyleSheet.create({
 	container: {
 		flex: 1,
+		width: "100%",
+		height: "100%",
+		backgroundColor: Colors.primary,
+		padding: 20,
+	},
+	container_header: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	container_center: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	container_bottom: {
+		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
 	},
 	titleImage: {
-		width: 100,
-		height: 100,
+		width: 256,
+		height: 64,
 	},
 	logoImage: {
-		width: 100,
-		height: 100,
+		width: 128,
+		height: 128,
 	},
-	titleText: {
-		fontSize: 20,
-		fontWeight: "bold",
-	},
-	loginButton: {
-		backgroundColor: Colors.accent,
-		padding: 10,
-		borderRadius: 5,
-		marginTop: 20,
-	},
+
 });
 export default LoginScreenStyle;
