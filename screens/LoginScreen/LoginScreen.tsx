@@ -1,5 +1,6 @@
-import { View, Text, Image, Pressable } from "react-native";
+import { View, Text, Image } from "react-native";
 import styles from "./LoginScreenStyle";
+import Button from "components/Button/Button";
 
 export default function LoginScreen() {
 	return (
@@ -8,7 +9,7 @@ export default function LoginScreen() {
 				<Image
 					source={require("assets/images/log_title-image.png")}
 					style={styles.titleImage}
-					resizeMode='center'
+					resizeMode='cover'
 				/>
 			</View>
 			<View style={styles.container_center}>
@@ -19,10 +20,19 @@ export default function LoginScreen() {
 				/>
 			</View>
 			<View style={styles.container_bottom}>
-				<Pressable style={styles.loginButton}>
-					<Text style={styles.titleText}>Log in as a guest</Text>
-				</Pressable>
+				<Text style={styles.text}>
+					{"Welcome to the best \nYouTube-based learning application."}
+				</Text>
+				<Button
+					title='Log in as guest'
+					onPress={() => console.log("Zalogowano")}
+				/>
+				<Text style={styles.bottomText}>
+					By logging in, you accept the {"\n"}Terms of Service and Privacy
+					Policy.
+				</Text>
 			</View>
 		</View>
 	);
 }
+// TODO Pressable link to terms of service and privacy policy

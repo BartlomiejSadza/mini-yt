@@ -24,14 +24,26 @@ const LoginScreenStyle = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 	},
+	text: {
+		color: Colors.white,
+		fontSize: 26,
+		textAlign: "left",
+		fontWeight: "bold",
+		marginBottom: 20,
+	},
+	bottomText: {
+		color: Colors.white,
+		fontSize: 16,
+		textAlign: "center",
+		marginTop: 20,
+	},
 	titleImage: {
-		width: 256,
-		height: 64,
+		width: 290,
+		height: 115,
 	},
 	logoImage: {
 		width: 128,
 		height: 128,
 	},
-
 });
 export default LoginScreenStyle;
