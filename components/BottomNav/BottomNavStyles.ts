@@ -9,12 +9,20 @@ const BottomNavStyles = StyleSheet.create({
 		alignItems: "center",
 		height: "10%",
 		backgroundColor: Colors.primary,
+		padding: 10,
 	},
 	navItem: {
 		flexDirection: "column",
 		fontSize: FontSizes.md,
 		color: Colors.accent,
 		fontFamily: Fonts.Regular,
+		marginTop: "5%",
+	},
+	navIcon: {
+		width: 26,
+		height: 26,
+		tintColor: Colors.accent,
+		margin: "auto",
 	},
 });
 
