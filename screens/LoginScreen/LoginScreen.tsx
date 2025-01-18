@@ -36,3 +36,4 @@ export default function LoginScreen() {
 	);
 }
 // TODO Pressable link to terms of service and privacy policy
+// TODO Fonts in Fonts.ts
