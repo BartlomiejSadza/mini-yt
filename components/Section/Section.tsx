@@ -1,6 +1,7 @@
-import { Text, View, TouchableOpacity, FlatList, Image } from "react-native";
+import { Text, View, FlatList, Image } from "react-native";
 import React from "react";
-import VideoCardStyles from "./VideoCardStyles";
+import VideoCardStyles from "./SectionStyles";
+import SectionHeader from "./SectionHeader/SectionHeader";
 
 interface VideoCardProps {
 	section: {
@@ -19,12 +20,7 @@ interface VideoCardProps {
 export default function VideoCard({ section }: VideoCardProps) {
 	return (
 		<View key={section.id} style={VideoCardStyles.section}>
-			<View style={VideoCardStyles.sectionHeader}>
-				<Text style={VideoCardStyles.sectionTitle}>{section.category}</Text>
-				<TouchableOpacity>
-					<Text style={VideoCardStyles.showMore}>Show more</Text>
-				</TouchableOpacity>
-			</View>
+			<SectionHeader category={section.category} />
 			<FlatList
 				data={section.videos}
 				keyExtractor={(item) => item.id}

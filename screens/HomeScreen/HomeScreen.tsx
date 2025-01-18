@@ -9,7 +9,7 @@ import {
 import HomeStyles from "./HomeScreenStyle";
 import data from "./data";
 
-import VideoCard from "components/VideoCard/VideoCard";
+import VideoCard from "components/Section/Section";
 
 const App = () => {
 	return (
