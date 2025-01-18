@@ -1,12 +1,13 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useState } from "react";
+import LoginScreen from "screens/LoginScreen/LoginScreen";
+import { View, Text } from "react-native";
 
-import HomeScreen from "screens/HomeScreen/HomeScreen";
-
-const Stack = createNativeStackNavigator();
 export default function App() {
+	const [logging, isLogging] = useState(true);
+
 	return (
-		<Stack.Navigator>
-			<Stack.Screen name='Home' component={HomeScreen} />
-		</Stack.Navigator>
+		<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+			{logging ? <LoginScreen /> : <Text>Logowanie</Text>}
+		</View>
 	);
 }
