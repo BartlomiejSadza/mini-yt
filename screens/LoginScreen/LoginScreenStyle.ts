@@ -1,11 +1,13 @@
 import { StyleSheet } from "react-native";
 import Colors from "../../styles/Colors";
+import { Fonts, FontSizes } from "../../styles/Fonts";
 
 const LoginScreenStyle = StyleSheet.create({
 	container: {
 		flex: 1,
 		width: "100%",
 		height: "100%",
+		fontFamily: Fonts.Regular,
 		backgroundColor: Colors.primary,
 		padding: 20,
 	},
@@ -26,14 +28,14 @@ const LoginScreenStyle = StyleSheet.create({
 	},
 	text: {
 		color: Colors.white,
-		fontSize: 26,
+		fontSize: FontSizes.xl,
+		fontWeight: "700",
 		textAlign: "left",
-		fontWeight: "bold",
 		marginBottom: 20,
 	},
 	bottomText: {
 		color: Colors.white,
-		fontSize: 16,
+		fontSize: FontSizes.md,
 		textAlign: "center",
 		marginTop: 20,
 	},
