@@ -1,7 +1,6 @@
 const Fonts = {
-	Regular: "assets/fonts/Poppins-Regular.ttf",
-	Italic: "assets/fonts/Poppins-Italic.ttf",
-	SpaceMono: "assets/fonts/SpaceMono-Regular.ttf",
+	Regular: "Poppins-Regular",
+	Bold: "Poppins-Bold",
 };
 
 const FontSizes = {
