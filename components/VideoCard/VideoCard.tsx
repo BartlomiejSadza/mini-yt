@@ -43,3 +43,5 @@ export default function VideoCard({ section }: VideoCardProps) {
 		</View>
 	);
 }
+
+// TODO component "Section"
