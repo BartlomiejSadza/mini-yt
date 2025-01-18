@@ -1,9 +1,10 @@
-import { Text, View, FlatList, Image } from "react-native";
-import React from "react";
-import VideoCardStyles from "./SectionStyles";
-import SectionHeader from "./SectionHeader/SectionHeader";
+import { View, FlatList } from "react-native";
 
-interface VideoCardProps {
+import SectionStyles from "./SectionStyles";
+import SectionHeader from "./SectionHeader/SectionHeader";
+import SectionVideoCard from "./SectionVideoCard/SectionVideoCard";
+
+interface SectionProps {
 	section: {
 		id: string;
 		category: string;
@@ -17,27 +18,16 @@ interface VideoCardProps {
 	};
 }
 
-export default function VideoCard({ section }: VideoCardProps) {
+export default function Section({ section }: SectionProps) {
 	return (
-		<View key={section.id} style={VideoCardStyles.section}>
+		<View key={section.id} style={SectionStyles.section}>
 			<SectionHeader category={section.category} />
 			<FlatList
 				data={section.videos}
 				keyExtractor={(item) => item.id}
 				horizontal
-				renderItem={({ item }) => (
-					<View style={VideoCardStyles.card}>
-						<Image
-							source={{ uri: item.image }}
-							style={VideoCardStyles.thumbnail}
-						/>
-						<Text style={VideoCardStyles.cardTitle}>{item.title}</Text>
-						<Text style={VideoCardStyles.cardDate}>{item.date}</Text>
-					</View>
-				)}
+				renderItem={({ item }) => <SectionVideoCard item={item} />}
 			/>
 		</View>
 	);
 }
-
-// TODO component "Section"

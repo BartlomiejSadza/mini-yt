@@ -9,7 +9,7 @@ import {
 import HomeStyles from "./HomeScreenStyle";
 import data from "./data";
 
-import VideoCard from "components/Section/Section";
+import Section from "components/Section/Section";
 
 const App = () => {
 	return (
@@ -20,9 +20,10 @@ const App = () => {
 					<Text>⚙️</Text>
 				</TouchableOpacity>
 			</View>
+			{/* TODO: SearchBar Component */}
 			<ScrollView>
 				{data.map((section) => (
-					<VideoCard key={section.id} section={section} />
+					<Section key={section.id} section={section} />
 				))}
 			</ScrollView>
 			<View style={HomeStyles.bottomNavigation}>
