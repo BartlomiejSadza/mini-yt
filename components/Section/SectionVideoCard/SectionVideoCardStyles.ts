@@ -5,10 +5,7 @@ import { FontSizes } from "styles/Fonts";
 const SectionVideoCardStyles = StyleSheet.create({
 	card: {
 		backgroundColor: Colors.white,
-		borderWidth: 1,
-		borderRadius: 8,
 		marginHorizontal: 8,
-		width: 200,
 		padding: 8,
 		elevation: 2,
 	},
@@ -18,14 +15,15 @@ const SectionVideoCardStyles = StyleSheet.create({
 		borderRadius: 8,
 	},
 	cardTitle: {
-		fontSize: 16,
+		fontSize: FontSizes.sm,
 		fontWeight: "600",
 		marginVertical: 4,
 	},
 	cardDate: {
-		fontSize: FontSizes.sm,
+		fontSize: FontSizes.xs,
 		color: Colors.accent,
-		marginTop: 4,
+		marginTop: 2,
+		textAlign: "right",
 	},
 });
 
