@@ -1,15 +1,23 @@
 import { useState } from "react";
+import { View, Text, StyleSheet } from "react-native";
 import LoginScreen from "screens/LoginScreen/LoginScreen";
-import { View, Text } from "react-native";
 
 export default function App() {
 	const [logging, setIsLogging] = useState(true);
 
 	return (
-		<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+		<View style={styles.container}>
 			{logging ?
 				<LoginScreen onPressFunc={() => setIsLogging(!logging)} />
 			:	<Text>Logowanie</Text>}
 		</View>
 	);
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+	},
+});

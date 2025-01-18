@@ -35,5 +35,5 @@ export default function LoginScreen({ onPressFunc }: onPressProp) {
 		</View>
 	);
 }
+
 // TODO Pressable link to terms of service and privacy policy
-// TODO Fonts in Fonts.ts
