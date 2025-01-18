@@ -1,39 +1,56 @@
-import Video, { VideoRef } from "react-native-video";
 import React, { useRef } from "react";
-import { StyleSheet } from "react-native";
+import {
+	StyleSheet,
+	SafeAreaView,
+	View,
+	useWindowDimensions,
+	StatusBar,
+} from "react-native";
+import Video, { VideoRef } from "react-native-video";
 
-// Within your render function, assuming you have a file called
-// "background.mp4" in your project. You can include multiple videos
-// on a single screen if you like.
+import Colors from "styles/Colors";
 
-const VideoPlayer = () => {
+export default function VideoPlayer() {
 	const videoRef = useRef<VideoRef>(null);
-	const background = require("assets/recruitment_task_assets/video/broadchurch.mp4");
+
+	const { width, height } = useWindowDimensions();
+	const isLandscape = width > height;
+
+	const videoStyle =
+		isLandscape ?
+			{ width, height } // fullscreen
+		:	{ width, height: (width * 9) / 16 }; // 16:9 but in portrait
 
 	return (
-		<Video
-			// Can be a URL or a local file.
-			source={background}
-			// Store reference
-			ref={videoRef}
-			// Callback when remote video is buffering
-			// onBuffer={onBuffer}
-			// Callback when video cannot be loaded
-			// onError={onError}
-			style={styles.backgroundVideo}
-		/>
-	);
-};
+		<SafeAreaView style={styles.container}>
+			<StatusBar hidden={isLandscape} />
 
-// Later on in your styles..
-var styles = StyleSheet.create({
-	backgroundVideo: {
-		position: "absolute",
-		top: 0,
-		left: 0,
-		bottom: 0,
-		right: 0,
+			<Video
+				ref={videoRef}
+				source={require("assets/recruitment_task_assets/video/broadchurch.mp4")}
+				style={videoStyle}
+				controls
+				resizeMode='contain'
+				onError={(e) => console.log("Video error:", e)}
+			/>
+
+			{/* VERTICAL --  */}
+			{!isLandscape && (
+				<View style={styles.contentBelow}>
+					{/*	TODO tekst, komentarze, buttony */}
+				</View>
+			)}
+		</SafeAreaView>
+	);
+}
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: Colors.black,
+	},
+	contentBelow: {
+		flex: 1,
+		backgroundColor: Colors.white,
 	},
 });
-
-export default VideoPlayer;
