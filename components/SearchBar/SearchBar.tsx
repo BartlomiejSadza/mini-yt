@@ -1,6 +1,5 @@
 import { View, Image, TextInput, TouchableOpacity } from "react-native";
 import Colors from "styles/Colors";
-import settingsIcon from "assets/images/settingsIcon.png";
 
 import SearchBarStyles from "./SearchBarStyles";
 
@@ -14,7 +13,7 @@ export default function SearchBar() {
 			/>
 			<TouchableOpacity style={SearchBarStyles.settingsIcon}>
 				<Image
-					source={settingsIcon}
+					source={require("assets/images/settingsIcon.png")}
 					style={SearchBarStyles.settingsIcon}
 					resizeMode='cover'
 				/>
