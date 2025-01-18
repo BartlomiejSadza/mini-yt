@@ -3,11 +3,13 @@ import LoginScreen from "screens/LoginScreen/LoginScreen";
 import { View, Text } from "react-native";
 
 export default function App() {
-	const [logging, isLogging] = useState(true);
+	const [logging, setIsLogging] = useState(true);
 
 	return (
 		<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-			{logging ? <LoginScreen /> : <Text>Logowanie</Text>}
+			{logging ?
+				<LoginScreen onPressFunc={() => setIsLogging(!logging)} />
+			:	<Text>Logowanie</Text>}
 		</View>
 	);
 }

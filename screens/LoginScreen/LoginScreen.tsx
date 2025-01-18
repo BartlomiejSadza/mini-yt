@@ -2,7 +2,10 @@ import { View, Text, Image } from "react-native";
 import styles from "./LoginScreenStyle";
 import Button from "components/Button/Button";
 
-export default function LoginScreen() {
+type onPressProp = {
+	onPressFunc: () => void;
+};
+export default function LoginScreen({ onPressFunc }: onPressProp) {
 	return (
 		<View style={styles.container}>
 			<View style={styles.container_header}>
@@ -23,10 +26,7 @@ export default function LoginScreen() {
 				<Text style={styles.text}>
 					{"Welcome to the best \nYouTube-based learning application."}
 				</Text>
-				<Button
-					title='Log in as guest'
-					onPress={() => console.log("Zalogowano")}
-				/>
+				<Button title='Log in as guest' onPress={onPressFunc} />
 				<Text style={styles.bottomText}>
 					By logging in, you accept the {"\n"}Terms of Service and Privacy
 					Policy.
