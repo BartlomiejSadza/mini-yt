@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import LoginScreen from "screens/LoginScreen/LoginScreen";
+import HomeScreen from "screens/HomeScreen/HomeScreen";
 
 export default function App() {
 	const [logging, setIsLogging] = useState(true);
@@ -9,7 +10,7 @@ export default function App() {
 		<View style={styles.container}>
 			{logging ?
 				<LoginScreen onPressFunc={() => setIsLogging(!logging)} />
-			:	<Text>Logowanie</Text>}
+			:	<HomeScreen />}
 		</View>
 	);
 }
