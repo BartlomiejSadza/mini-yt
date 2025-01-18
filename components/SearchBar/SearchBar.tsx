@@ -11,12 +11,14 @@ export default function SearchBar() {
 				placeholder='Search videos'
 				placeholderTextColor={Colors.primary}
 			/>
+			{/* TODO: useContext to handle textInput logic */}
 			<TouchableOpacity style={SearchBarStyles.settingsIcon}>
 				<Image
 					source={require("assets/images/settingsIcon.png")}
 					style={SearchBarStyles.settingsIcon}
 					resizeMode='cover'
 				/>
+				{/* TODO: Settings PopUp */}
 			</TouchableOpacity>
 		</View>
 	);
