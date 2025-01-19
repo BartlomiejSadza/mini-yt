@@ -29,6 +29,7 @@ export default function SearchScreen() {
 		<TouchableOpacity style={SearchScreenStyles.cardContainer}>
 			<SectionVideoCard
 				item={{
+					id: item.id.videoId,
 					image: item.snippet.thumbnails.medium.url,
 					title: item.snippet.title,
 					channel: item.snippet.channelTitle,

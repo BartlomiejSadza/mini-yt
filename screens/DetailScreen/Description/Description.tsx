@@ -1,20 +1,27 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
+import { useLocalSearchParams } from "expo-router";
+import { useVideo } from "contexts/VideoContext";
 
 import styles from "./DescriptionStyle";
 
 // TODO - zaimplementować komponent Description i propsy
-const Description = () => {
+export default function Description() {
+	const { id } = useLocalSearchParams<{ id: string }>();
+	const { videos } = useVideo();
+
+	const video = videos.find((video) => video.id.videoId === id);
+
+	if (!video) return null;
+
 	return (
 		<View style={styles.contentContainer}>
-			<Text style={styles.videoTitle}>
-				Lorem ipsum dolor sit amet, consect...
-			</Text>
+			<Text style={styles.videoTitle}>{video.snippet.title}</Text>
 			<Image
 				source={require("assets/recruitment_task_assets/app-icon.png")}
 				style={{ width: 24, height: 24 }}
 			/>
-			<Text style={styles.channelName}>Channel name</Text>
+			<Text style={styles.channelName}>{video.snippet.channelTitle}</Text>
 
 			{/* Przykład "tabów" - w uproszczeniu */}
 			<View style={styles.tabsWrapper}>
@@ -23,11 +30,7 @@ const Description = () => {
 			</View>
 
 			<Text style={styles.descriptionTitle}>Description</Text>
-			<Text style={styles.descriptionText}>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-				venenatis semper purus a accumsan. Donec accumsan pulvinar metus,
-				euismod lacinia libero congue non. Vivamus ut massa finibus...
-			</Text>
+			<Text style={styles.descriptionText}>{video.snippet.description}</Text>
 
 			<Text style={styles.statsTitle}>Statistics</Text>
 			<View style={styles.statsRow}>
@@ -40,6 +43,4 @@ const Description = () => {
 			</View>
 		</View>
 	);
-};
-
-export default Description;
+}

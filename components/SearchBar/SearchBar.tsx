@@ -1,10 +1,4 @@
-import {
-	View,
-	Image,
-	TextInput,
-	TouchableOpacity,
-	Pressable,
-} from "react-native";
+import { TextInput } from "react-native";
 import { useCallback, useEffect, useRef } from "react";
 import Colors from "styles/Colors";
 import { router } from "expo-router";
@@ -27,9 +21,9 @@ export default function SearchBar() {
 			searchTimeout.current = setTimeout(async () => {
 				if (text.length > 2) {
 					await searchVideos(text);
+					router.navigate("/search");
 				}
-			}, 500);
-			router.navigate("/search");
+			}, 800);
 		},
 		[searchVideos, setSearchQuery]
 	);

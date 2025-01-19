@@ -14,7 +14,9 @@ const App = () => {
 		<SafeAreaView style={HomeStyles.container} edges={["left", "right"]}>
 			<View style={HomeStyles.topBar}>
 				<SearchBar />
-				<SettingsIcon />
+				<Pressable onPress={() => router.push("/settings")}>
+					<SettingsIcon />
+				</Pressable>
 			</View>
 			<ScrollView>
 				{data.map((section) => (
