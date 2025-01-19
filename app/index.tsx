@@ -4,6 +4,7 @@ import { View, StyleSheet } from "react-native";
 import LoginScreen from "screens/LoginScreen/LoginScreen";
 import HomeScreen from "screens/HomeScreen/HomeScreen";
 import DetailScreen from "screens/DetailScreen/DetailScreen";
+import SearchScreen from "screens/SearchScreen/SearchScreen";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -19,10 +20,11 @@ export default function App() {
 
 	return (
 		<View style={styles.container}>
-			{/* {logging ?
+			{logging ?
 				<LoginScreen onPressFunc={() => setIsLogging(!logging)} />
-			:	<HomeScreen />} */}
+			:	<HomeScreen />}
 			{/* <DetailScreen /> */}
+			{/* <SearchScreen /> */}
 		</View>
 	);
 }

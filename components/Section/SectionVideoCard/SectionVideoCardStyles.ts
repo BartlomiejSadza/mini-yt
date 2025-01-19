@@ -12,11 +12,11 @@ const SectionVideoCardStyles = StyleSheet.create({
 	thumbnail: {
 		width: "100%",
 		height: 100,
-		borderRadius: 8,
+		borderRadius: 12,
 	},
 	cardTitle: {
 		fontSize: FontSizes.sm,
-		fontWeight: "600",
+		fontWeight: "400",
 		marginVertical: 4,
 	},
 	cardDate: {
