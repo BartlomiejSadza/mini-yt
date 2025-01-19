@@ -22,7 +22,7 @@ export default function App() {
 			{/* {logging ?
 				<LoginScreen onPressFunc={() => setIsLogging(!logging)} />
 			:	<HomeScreen />} */}
-			<DetailScreen />
+			{/* <DetailScreen /> */}
 		</View>
 	);
 }
