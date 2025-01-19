@@ -30,5 +30,3 @@ export default function SectionVideoCard({ item }: VideoCardProps) {
 		</TouchableOpacity>
 	);
 }
-
-// TODO: Enable click on video card to navigate to video details screen
