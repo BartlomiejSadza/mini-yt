@@ -5,7 +5,16 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["app/*"]
-		}
+		},
+		"target": "es2022",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"allowJs": true,
+		"esModuleInterop": true
 	},
-	"include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+	"ts-node": {
+		"esm": true,
+		"experimentalSpecifierResolution": "node"
+	},
+	"include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "data/api_fetch.ts"]
 }
