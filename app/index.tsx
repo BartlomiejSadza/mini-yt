@@ -3,7 +3,7 @@ import { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import LoginScreen from "screens/LoginScreen/LoginScreen";
 import HomeScreen from "screens/HomeScreen/HomeScreen";
-import VideoPlayer from "screens/Player";
+import VideoPlayer from "screens/DetailScreen/VideoPlayer";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
