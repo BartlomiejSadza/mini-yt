@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 import Colors from "styles/Colors";
 
-
 const HomeStyles = StyleSheet.create({
 	container: {
 		flex: 1,
+		top: 0,
 		backgroundColor: Colors.white,
 	},
 });

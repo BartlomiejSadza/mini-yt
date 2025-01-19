@@ -6,18 +6,16 @@ import data from "./data";
 
 import Section from "components/Section/Section";
 import SearchBar from "components/SearchBar/SearchBar";
-import BottomNav from "components/BottomNav/BottomNav";
 
 const App = () => {
 	return (
-		<SafeAreaView style={HomeStyles.container} edges={["top", "left", "right"]}>
+		<SafeAreaView style={HomeStyles.container} edges={["left", "right"]}>
 			<SearchBar />
 			<ScrollView>
 				{data.map((section) => (
 					<Section key={section.id} section={section} />
 				))}
 			</ScrollView>
-			<BottomNav />
 		</SafeAreaView>
 	);
 };

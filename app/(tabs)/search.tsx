@@ -1,10 +1,5 @@
-import React from "react";
-import { View, Text } from "react-native";
+import SearchScreen from "screens/SearchScreen/SearchScreen";
 
 export default function Search() {
-	return (
-		<View>
-			<Text>Siemanko tutaj search!</Text>
-		</View>
-	);
+	return <SearchScreen />;
 }
