@@ -20,11 +20,11 @@ export default function App() {
 
 	return (
 		<View style={styles.container}>
-			{logging ?
+			{/* {logging ?
 				<LoginScreen onPressFunc={() => setIsLogging(!logging)} />
-			:	<HomeScreen />}
+			:	<HomeScreen />} */}
 			{/* <DetailScreen /> */}
-			{/* <SearchScreen /> */}
+			<SearchScreen />
 		</View>
 	);
 }

@@ -1,10 +1,5 @@
-import {
-	View,
-	Text,
-	SafeAreaView,
-	FlatList,
-	TouchableOpacity,
-} from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import SectionVideoCard from "components/Section/SectionVideoCard/SectionVideoCard";
 import SearchBar from "components/SearchBar/SearchBar";
 import BottomNav from "components/BottomNav/BottomNav";
@@ -62,7 +57,7 @@ export default function SearchScreen() {
 	};
 
 	return (
-		<SafeAreaView style={SearchScreenStyles.container}>
+		<SafeAreaView edges={["top"]} style={SearchScreenStyles.container}>
 			<SearchBar />
 			{/* sort and results */}
 			<View style={SearchScreenStyles.resultsInfo}>
@@ -78,10 +73,9 @@ export default function SearchScreen() {
 			{/* videos list */}
 			<FlatList
 				data={mockData}
-				keyExtractor={(item, index) => index.toString()}
+				keyExtractor={(_, index) => index.toString()}
 				renderItem={renderItem}
 				style={SearchScreenStyles.list}
-				// contentContainerStyle={{ paddingBottom: 80 }}
 			/>
 
 			<BottomNav />

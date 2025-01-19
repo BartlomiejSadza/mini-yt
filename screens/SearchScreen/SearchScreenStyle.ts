@@ -5,6 +5,7 @@ import { Fonts, FontSizes } from "styles/Fonts";
 const SearchScreenStyles = StyleSheet.create({
 	container: {
 		flex: 1,
+		width: "100%",
 		backgroundColor: Colors.white,
 	},
 	resultsInfo: {
