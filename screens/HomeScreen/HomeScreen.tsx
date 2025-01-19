@@ -1,6 +1,7 @@
 import React from "react";
-import { ScrollView, View } from "react-native";
+import { Pressable, ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from "expo-router";
 import HomeStyles from "./HomeScreenStyle";
 import data from "./data";
 
