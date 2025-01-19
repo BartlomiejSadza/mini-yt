@@ -1,13 +1,6 @@
 import React, { useRef } from "react";
-import {
-	StyleSheet,
-	SafeAreaView,
-	useWindowDimensions,
-	StatusBar,
-} from "react-native";
+import { SafeAreaView, useWindowDimensions, StatusBar } from "react-native";
 import Video, { VideoRef } from "react-native-video";
-
-import Colors from "styles/Colors";
 
 export default function VideoPlayer() {
 	const videoRef = useRef<VideoRef>(null);
