@@ -7,6 +7,13 @@ const HomeStyles = StyleSheet.create({
 		top: 0,
 		backgroundColor: Colors.white,
 	},
+	topBar: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-around",
+		padding: 8,
+		backgroundColor: Colors.white,
+	},
 });
 
 export default HomeStyles;

@@ -5,6 +5,7 @@ type VideoCardProps = {
 	item: {
 		image: string;
 		title: string;
+		channel?: string;
 		description?: string;
 		date: string;
 	};
@@ -17,6 +18,9 @@ export default function SectionVideoCard({ item }: VideoCardProps) {
 				source={{ uri: item.image }}
 				style={SectionVideoCardStyles.thumbnail}
 			/>
+			{item.channel && (
+				<Text style={SectionVideoCardStyles.cardChannel}>{item.channel}</Text>
+			)}
 			<Text style={SectionVideoCardStyles.cardTitle}>{item.title}</Text>
 			<Text style={SectionVideoCardStyles.cardDate}>{item.date}</Text>
 		</View>

@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import {
+	createContext,
+	useContext,
+	useState,
+	ReactNode,
+	useEffect,
+} from "react";
 import fetchVideos from "data/api_fetch";
 
 interface YouTubeItem {
@@ -40,6 +46,10 @@ export function VideoProvider({ children }: { children: ReactNode }) {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		searchVideos("React native");
+	}, []);
 
 	const searchVideos = async (query: string) => {
 		setLoading(true);

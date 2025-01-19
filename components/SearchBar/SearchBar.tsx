@@ -34,21 +34,14 @@ export default function SearchBar() {
 	}, []);
 
 	return (
-		<View style={SearchBarStyles.header}>
-			<TextInput
-				style={SearchBarStyles.searchBar}
-				placeholder='Search videos'
-				placeholderTextColor={Colors.primary}
-				value={searchQuery}
-				onChangeText={handleSearch}
-			/>
-			<TouchableOpacity style={SearchBarStyles.settingsIcon}>
-				<Image
-					source={require("assets/images/settingsIcon.png")}
-					style={SearchBarStyles.settingsIcon}
-					resizeMode='cover'
-				/>
-			</TouchableOpacity>
-		</View>
+		<TextInput
+			style={SearchBarStyles.searchBar}
+			placeholder=' 🔎 Search videos'
+			keyboardType='default'
+			placeholderTextColor={Colors.primary}
+			value={searchQuery}
+			onChangeText={handleSearch}
+			clearButtonMode='while-editing'
+		/>
 	);
 }

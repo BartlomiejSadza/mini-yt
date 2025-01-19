@@ -41,6 +41,13 @@ const SearchScreenStyles = StyleSheet.create({
 		borderRadius: 8,
 		overflow: "hidden",
 	},
+	topBar: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-around",
+		padding: 8,
+		backgroundColor: Colors.white,
+	},
 });
 
 export default SearchScreenStyles;

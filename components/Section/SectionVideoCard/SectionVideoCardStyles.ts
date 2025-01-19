@@ -15,7 +15,7 @@ const SectionVideoCardStyles = StyleSheet.create({
 		borderRadius: 12,
 	},
 	cardTitle: {
-		fontSize: FontSizes.sm,
+		fontSize: FontSizes.md,
 		fontWeight: "400",
 		marginVertical: 4,
 	},
@@ -24,6 +24,12 @@ const SectionVideoCardStyles = StyleSheet.create({
 		color: Colors.accent,
 		marginTop: 2,
 		textAlign: "right",
+	},
+	cardChannel: {
+		fontSize: FontSizes.xs,
+		fontWeight: "600",
+		color: Colors.accent,
+		marginVertical: 4,
 	},
 });
 

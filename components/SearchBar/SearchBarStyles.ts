@@ -2,16 +2,10 @@ import { StyleSheet } from "react-native";
 import Colors from "styles/Colors";
 
 const SearchBarStyles = StyleSheet.create({
-	header: {
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-around",
-		padding: 16,
-		backgroundColor: Colors.white,
-	},
 	searchBar: {
 		height: 44,
-		width: "80%",
+		minWidth: "80%",
+		maxWidth: "90%",
 		backgroundColor: Colors.white,
 		borderWidth: 2,
 		borderRadius: 16,
