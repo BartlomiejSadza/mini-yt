@@ -27,8 +27,8 @@ interface YouTubeItem {
 	};
 }
 
-async function fetchVideos() {
-	const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=typescript&type=video&maxResults=10&key=${API_KEY}`;
+async function fetchVideos(query: string) {
+	const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=10&key=${API_KEY}`;
 
 	try {
 		const response = await fetch(url);
