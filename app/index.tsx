@@ -3,7 +3,7 @@ import { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import LoginScreen from "screens/LoginScreen/LoginScreen";
 import HomeScreen from "screens/HomeScreen/HomeScreen";
-import VideoPlayer from "screens/DetailScreen/VideoPlayer";
+import DetailScreen from "screens/DetailScreen/DetailScreen";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -22,7 +22,7 @@ export default function App() {
 			{/* {logging ?
 				<LoginScreen onPressFunc={() => setIsLogging(!logging)} />
 			:	<HomeScreen />} */}
-			<VideoPlayer />
+			<DetailScreen />
 		</View>
 	);
 }

@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import {
 	StyleSheet,
 	SafeAreaView,
-	View,
 	useWindowDimensions,
 	StatusBar,
 } from "react-native";
@@ -22,7 +21,7 @@ export default function VideoPlayer() {
 		:	{ width, height: (width * 9) / 16 }; // 16:9 but in portrait
 
 	return (
-		<SafeAreaView style={styles.container}>
+		<SafeAreaView>
 			<StatusBar hidden={isLandscape} />
 
 			<Video
@@ -33,24 +32,6 @@ export default function VideoPlayer() {
 				resizeMode='contain'
 				onError={(e) => console.log("Video error:", e)}
 			/>
-
-			{/* VERTICAL --  */}
-			{!isLandscape && (
-				<View style={styles.contentBelow}>
-					{/*	TODO tekst, komentarze, buttony */}
-				</View>
-			)}
 		</SafeAreaView>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: Colors.black,
-	},
-	contentBelow: {
-		flex: 1,
-		backgroundColor: Colors.white,
-	},
-});
