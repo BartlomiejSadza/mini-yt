@@ -6,7 +6,7 @@ import DetailScreenStyle from "./DetailScreenStyle";
 
 export default function DetailScreen() {
 	return (
-		<SafeAreaView>
+		<SafeAreaView style={DetailScreenStyle.contentContainer}>
 			<VideoPlayer />
 			<Description />
 		</SafeAreaView>

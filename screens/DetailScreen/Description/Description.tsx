@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 
 import styles from "./DescriptionStyle";
 
@@ -10,6 +10,10 @@ const Description = () => {
 			<Text style={styles.videoTitle}>
 				Lorem ipsum dolor sit amet, consect...
 			</Text>
+			<Image
+				source={require("assets/recruitment_task_assets/app-icon.png")}
+				style={{ width: 24, height: 24 }}
+			/>
 			<Text style={styles.channelName}>Channel name</Text>
 
 			{/* Przykład "tabów" - w uproszczeniu */}
@@ -28,10 +32,10 @@ const Description = () => {
 			<Text style={styles.statsTitle}>Statistics</Text>
 			<View style={styles.statsRow}>
 				<View style={styles.statItem}>
-					<Text>25268952 views</Text>
+					<Text style={styles.statText}>25268952 views</Text>
 				</View>
 				<View style={styles.statItem}>
-					<Text>12345 likes</Text>
+					<Text style={styles.statText}>12345 likes</Text>
 				</View>
 			</View>
 		</View>

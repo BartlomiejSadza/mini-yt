@@ -1,17 +1,19 @@
 import { StyleSheet } from "react-native";
+import Colors from "styles/Colors";
+import { Fonts, FontSizes } from "styles/Fonts";
 
 const DescriptionStyle = StyleSheet.create({
 	contentContainer: {
 		padding: 16,
 	},
 	videoTitle: {
-		fontSize: 18,
+		fontSize: FontSizes.xl,
 		fontWeight: "600",
 		marginBottom: 4,
 	},
 	channelName: {
-		fontSize: 14,
-		color: "#666",
+		fontSize: FontSizes.md,
+		color: Colors.accent,
 		marginBottom: 12,
 	},
 	tabsWrapper: {
@@ -23,15 +25,15 @@ const DescriptionStyle = StyleSheet.create({
 		marginRight: 20,
 	},
 	inactiveTab: {
-		color: "#999",
+		color: Colors.inactiveTab,
 	},
 	descriptionTitle: {
 		fontWeight: "bold",
 		marginBottom: 4,
 	},
 	descriptionText: {
-		fontSize: 14,
-		color: "#333",
+		fontSize: FontSizes.sm,
+		color: Colors.accent,
 		marginBottom: 16,
 	},
 	statsTitle: {
@@ -41,13 +43,17 @@ const DescriptionStyle = StyleSheet.create({
 	statsRow: {
 		flexDirection: "row",
 		justifyContent: "space-between",
+		color: Colors.white,
 	},
 	statItem: {
-		backgroundColor: "#eee",
+		backgroundColor: Colors.accent,
 		padding: 8,
 		borderRadius: 4,
 		width: "45%",
 		alignItems: "center",
+	},
+	statText: {	
+		color: Colors.white,
 	},
 });
 

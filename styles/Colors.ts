@@ -3,5 +3,6 @@ const Colors = {
 	accent: "#2B2D42",
 	white: "#FFFFFF",
 	black: "#000000",
+	inactiveTab: "#999",
 };
 export default Colors;
