@@ -6,3 +6,7 @@ name = "javascript"
   [analyzers.meta]
   plugins = ["react"]
   environment = ["nodejs"]
+    
+  [analyzers.rules]
+  no-console = "error"
+  max-warnings = 0

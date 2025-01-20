@@ -35,7 +35,6 @@ async function fetchVideos(query: string) {
 		const data: YouTubeResponse = await response.json();
 		return data.items;
 	} catch (error) {
-		console.error(error);
 		throw error;
 	}
 }
