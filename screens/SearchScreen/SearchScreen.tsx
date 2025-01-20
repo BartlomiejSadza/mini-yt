@@ -1,9 +1,17 @@
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import {
+	View,
+	Text,
+	FlatList,
+	TouchableOpacity,
+	Pressable,
+} from "react-native";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useVideo } from "contexts/VideoContext";
 import SearchBar from "components/SearchBar/SearchBar";
 import SectionVideoCard from "components/Section/SectionVideoCard/SectionVideoCard";
 import SearchScreenStyles from "./SearchScreenStyle";
+import SortModal from "modal/SortModal";
 
 interface VideoItem {
 	id: {
@@ -24,6 +32,7 @@ interface VideoItem {
 
 export default function SearchScreen() {
 	const { videos, loading, searchQuery } = useVideo();
+	const [isModalVisible, setIsModalVisible] = useState(false);
 
 	const renderItem = ({ item }: { item: VideoItem }) => (
 		<TouchableOpacity style={SearchScreenStyles.cardContainer}>
@@ -44,15 +53,16 @@ export default function SearchScreen() {
 			<View style={SearchScreenStyles.topBar}>
 				<SearchBar />
 			</View>
-
 			<View style={SearchScreenStyles.resultsInfo}>
 				<Text style={SearchScreenStyles.resultsText}>
 					{videos?.length} results found for:{" "}
 					<Text style={SearchScreenStyles.searchTerm}>"{searchQuery}"</Text>
 				</Text>
-				<Text style={SearchScreenStyles.sortByText}>
-					Sort by: <Text style={SearchScreenStyles.bold}>Most popular</Text>
-				</Text>
+				<Pressable onPress={() => setIsModalVisible(true)}>
+					<Text style={SearchScreenStyles.sortByText}>
+						Sort by: <Text style={SearchScreenStyles.bold}>Most popular</Text>
+					</Text>
+				</Pressable>
 			</View>
 
 			<FlatList
@@ -60,6 +70,11 @@ export default function SearchScreen() {
 				keyExtractor={(item) => item.id.videoId}
 				renderItem={renderItem}
 				style={SearchScreenStyles.list}
+			/>
+
+			<SortModal
+				visible={isModalVisible}
+				onClose={() => setIsModalVisible(false)}
 			/>
 		</SafeAreaView>
 	);
