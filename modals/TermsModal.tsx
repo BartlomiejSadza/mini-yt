@@ -10,7 +10,7 @@ export default function TermsModal({ visible, onClose }: TermsModalProps) {
 	return (
 		<Modal
 			animationType='fade'
-			transparent={true}
+			transparent
 			visible={visible}
 			onRequestClose={onClose}>
 			<View style={sortModalStyles.overlay}>

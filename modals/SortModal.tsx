@@ -28,7 +28,7 @@ export default function SortModal({
 	return (
 		<Modal
 			animationType='fade'
-			transparent={true}
+			transparent
 			visible={visible}
 			onRequestClose={onClose}>
 			<View style={sortModalStyles.overlay}>

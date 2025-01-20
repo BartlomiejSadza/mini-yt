@@ -67,7 +67,7 @@ export default function Description(): JSX.Element {
 			<ScrollView
 				style={{ flex: 1 }}
 				contentContainerStyle={{ flexGrow: 1 }}
-				showsVerticalScrollIndicator={true}>
+				showsVerticalScrollIndicator>
 				<VideoDescription description={snippet.description} />
 			</ScrollView>
 			<VideoStats statistics={statistics} />
