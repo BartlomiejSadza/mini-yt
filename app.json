@@ -4,39 +4,42 @@
     "slug": "mini-yt",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/log_logo-yt.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "backgroundColor": "#8D99AE",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "io.expo.client"
+      "bundleIdentifier": "io.expo.client",
+      "backgroundColor": "#8D99AE"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/log_logo-yt.png",
         "backgroundColor": "#ffffff"
       },
       "permissions": [
         "android.permission.FOREGROUND_SERVICE",
         "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
       ],
-      "package": "io.expo.client"
+      "package": "io.expo.client",
+      "backgroundColor": "#8D99AE"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/log_logo-yt.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/home.png",
+          "image": "./assets/images/log_title-image.png",
           "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "resizeMode": "cover",
+          "backgroundColor": "#8D99AE"
         }
       ],
       "expo-font",
@@ -69,6 +72,10 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "splash": {
+      "backgroundColor": "#8D99AE",
+      "resizeMode": "contain"
     }
   }
 }

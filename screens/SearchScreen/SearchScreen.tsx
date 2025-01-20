@@ -47,7 +47,7 @@ export default function SearchScreen() {
 
 			<View style={SearchScreenStyles.resultsInfo}>
 				<Text style={SearchScreenStyles.resultsText}>
-					{videos.length} results found for:{" "}
+					{videos?.length} results found for:{" "}
 					<Text style={SearchScreenStyles.searchTerm}>"{searchQuery}"</Text>
 				</Text>
 				<Text style={SearchScreenStyles.sortByText}>

@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyCq1fDsYSBYAXN1F41QQxLSBOGMYn6gXEQ";
+const API_KEY = "AIzaSyAXr30-BsbSn0PXxBo1EJ0xhy2xC-whyCs";
 
 interface YouTubeResponse {
 	items: YouTubeItem[];

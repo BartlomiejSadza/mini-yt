@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, SafeAreaView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import {
 	LoadingState,
@@ -28,7 +28,7 @@ export default function Description(): JSX.Element {
 
 			try {
 				const response = await fetch(
-					`https://www.googleapis.com/youtube/v3/videos?id=${id}&part=snippet,contentDetails,statistics,status&key=AIzaSyCq1fDsYSBYAXN1F41QQxLSBOGMYn6gXEQ`
+					`https://www.googleapis.com/youtube/v3/videos?id=${id}&part=snippet,contentDetails,statistics,status&key=AIzaSyAXr30-BsbSn0PXxBo1EJ0xhy2xC-whyCs`
 				);
 
 				if (!response.ok) {
@@ -61,7 +61,7 @@ export default function Description(): JSX.Element {
 	const { snippet, statistics } = video.items[0];
 
 	return (
-		<View style={(styles.contentContainer, { flex: 1 })}>
+		<SafeAreaView style={styles.contentContainer}>
 			<VideoHeader title={snippet.title} channelTitle={snippet.channelTitle} />
 			<VideoTabs />
 			<ScrollView
@@ -71,6 +71,6 @@ export default function Description(): JSX.Element {
 				<VideoDescription description={snippet.description} />
 			</ScrollView>
 			<VideoStats statistics={statistics} />
-		</View>
+		</SafeAreaView>
 	);
 }
