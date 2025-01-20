@@ -31,8 +31,9 @@ interface VideoItem {
 }
 
 export default function SearchScreen() {
-	const { videos, loading, searchQuery } = useVideo();
+	const { videos, searchQuery } = useVideo();
 	const [isModalVisible, setIsModalVisible] = useState(false);
+	const [selectedSort, setSelectedSort] = useState("Most popular");
 
 	const renderItem = ({ item }: { item: VideoItem }) => (
 		<TouchableOpacity style={SearchScreenStyles.cardContainer}>
@@ -60,7 +61,7 @@ export default function SearchScreen() {
 				</Text>
 				<Pressable onPress={() => setIsModalVisible(true)}>
 					<Text style={SearchScreenStyles.sortByText}>
-						Sort by: <Text style={SearchScreenStyles.bold}>Most popular</Text>
+						Sort by: <Text style={SearchScreenStyles.bold}>{selectedSort}</Text>
 					</Text>
 				</Pressable>
 			</View>
@@ -75,6 +76,8 @@ export default function SearchScreen() {
 			<SortModal
 				visible={isModalVisible}
 				onClose={() => setIsModalVisible(false)}
+				selectedOption={selectedSort}
+				setSelectedOption={setSelectedSort}
 			/>
 		</SafeAreaView>
 	);

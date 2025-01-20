@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { View, Text, Modal, TouchableOpacity, Pressable } from "react-native";
 
 import sortModalStyles from "./SortModalStyles";
@@ -6,10 +5,16 @@ import sortModalStyles from "./SortModalStyles";
 interface SortModalProps {
 	visible: boolean;
 	onClose: () => void;
+	selectedOption: string;
+	setSelectedOption: (option: string) => void;
 }
 
-export default function SortModal({ visible, onClose }: SortModalProps) {
-	const [selectedOption, setSelectedOption] = useState("Upload date: latest");
+export default function SortModal({
+	visible,
+	onClose,
+	selectedOption,
+	setSelectedOption,
+}: SortModalProps) {
 	const options = [
 		"Upload date: latest",
 		"Upload date: oldest",
