@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, ScrollView, SafeAreaView } from "react-native";
+import { ScrollView, SafeAreaView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import {
 	LoadingState,

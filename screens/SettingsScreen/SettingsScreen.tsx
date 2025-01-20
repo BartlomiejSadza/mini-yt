@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Switch, Image } from "react-native";
-import { VideoHeader } from "screens/DetailScreen/Description/descriptionComponents";
 import settingsStyles from "./SettingsScreenStyles";
+import { VideoHeader } from "screens/DetailScreen/Description/descriptionComponents";
 import Colors from "styles/Colors";
 
 export default function SettingsScreen() {

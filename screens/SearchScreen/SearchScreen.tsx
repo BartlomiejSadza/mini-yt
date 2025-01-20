@@ -7,10 +7,10 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import SearchScreenStyles from "./SearchScreenStyle";
 import { useVideo } from "contexts/VideoContext";
 import SearchBar from "components/SearchBar/SearchBar";
 import SectionVideoCard from "components/Section/SectionVideoCard/SectionVideoCard";
-import SearchScreenStyles from "./SearchScreenStyle";
 import SortModal from "modals/SortModal";
 
 interface VideoItem {
@@ -57,7 +57,7 @@ export default function SearchScreen() {
 			<View style={SearchScreenStyles.resultsInfo}>
 				<Text style={SearchScreenStyles.resultsText}>
 					{videos?.length} results found for:{" "}
-					<Text style={SearchScreenStyles.searchTerm}>"{searchQuery}"</Text>
+					<Text style={SearchScreenStyles.searchTerm}>{searchQuery}</Text>
 				</Text>
 				<Pressable onPress={() => setIsModalVisible(true)}>
 					<Text style={SearchScreenStyles.sortByText}>

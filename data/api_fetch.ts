@@ -30,13 +30,9 @@ interface YouTubeItem {
 async function fetchVideos(query: string) {
 	const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=10&key=${API_KEY}`;
 
-	try {
-		const response = await fetch(url);
-		const data: YouTubeResponse = await response.json();
-		return data.items;
-	} catch (error) {
-		throw error;
-	}
+	const response = await fetch(url);
+	const data: YouTubeResponse = await response.json();
+	return data.items;
 }
 
 export default fetchVideos;

@@ -6,7 +6,7 @@ export default function SettingsIcon() {
 	return (
 		<TouchableOpacity
 			style={SearchBarStyles.settingsIcon}
-			onPress={() => router.push("/settings")}> 
+			onPress={() => router.push("/settings")}>
 			<Image
 				source={require("assets/images/settingsIcon.png")}
 				style={SearchBarStyles.settingsIcon}

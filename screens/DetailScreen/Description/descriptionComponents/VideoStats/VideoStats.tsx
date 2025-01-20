@@ -19,10 +19,7 @@ export const VideoStats = ({ statistics }: VideoStatsProps) => (
 			</Text>
 		</View>
 		<View style={styles.statItem}>
-      <Image
-        source={require("assets/images/like.png")}
-        style={styles.icon} 
-        />
+			<Image source={require("assets/images/like.png")} style={styles.icon} />
 			<Text style={styles.statText}>
 				{formatNumber(statistics.likeCount)} likes
 			</Text>

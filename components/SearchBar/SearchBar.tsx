@@ -1,9 +1,9 @@
 import { TextInput } from "react-native";
 import { useCallback, useEffect, useRef } from "react";
-import Colors from "styles/Colors";
 import { router } from "expo-router";
-import { useVideo } from "contexts/VideoContext";
 import SearchBarStyles from "./SearchBarStyles";
+import { useVideo } from "contexts/VideoContext";
+import Colors from "styles/Colors";
 
 export default function SearchBar() {
 	const { searchQuery, setSearchQuery, searchVideos } = useVideo();

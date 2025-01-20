@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { router } from "expo-router";
-import { useVideo } from "contexts/VideoContext";
 import SectionHeaderStyles from "./SectionHeaderStyles";
+import { useVideo } from "contexts/VideoContext";
 
 type SectionHeaderProps = {
 	category: string;

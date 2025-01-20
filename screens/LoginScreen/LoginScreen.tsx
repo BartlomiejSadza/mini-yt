@@ -1,4 +1,4 @@
-import { View, Text, Image, Pressable } from "react-native";
+import { View, Text, Image } from "react-native";
 import { useState } from "react";
 import styles from "./LoginScreenStyle";
 import Button from "components/Button/Button";
@@ -50,5 +50,3 @@ export default function LoginScreen({ onPressFunc }: onPressProp) {
 		</View>
 	);
 }
-
-// TODO Pressable link to terms of service and privacy policy

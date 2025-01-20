@@ -50,7 +50,7 @@ const LoginScreenStyle = StyleSheet.create({
 	},
 	termsText: {
 		color: Colors.accent,
-		textDecorationLine: 'underline',
+		textDecorationLine: "underline",
 	},
 });
 export default LoginScreenStyle;

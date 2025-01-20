@@ -23,7 +23,7 @@ export default function VideoPlayer() {
 				style={videoStyle}
 				controls
 				resizeMode='contain'
-				onError={(e) => console.log("Video error:", e)}
+				onError={(e) => alert(`Video error: ${e.error.errorString}`)}
 			/>
 		</SafeAreaView>
 	);

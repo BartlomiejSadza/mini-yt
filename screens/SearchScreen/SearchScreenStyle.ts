@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import Colors from "styles/Colors";
-import { Fonts, FontSizes } from "styles/Fonts";
+import { FontSizes } from "styles/Fonts";
 
 const SearchScreenStyles = StyleSheet.create({
 	container: {
