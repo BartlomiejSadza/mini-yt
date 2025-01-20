@@ -4,5 +4,6 @@ const Colors = {
 	white: "#FFFFFF",
 	black: "#000000",
 	inactiveTab: "#999",
+	overlay: "rgba(0, 0, 0, 0.5)",
 };
 export default Colors;
