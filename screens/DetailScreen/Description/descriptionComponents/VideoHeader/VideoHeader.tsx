@@ -2,7 +2,7 @@ import { View, Text, Image } from "react-native";
 import styles from "../../DescriptionStyle";
 
 interface VideoHeaderProps {
-	title: string;
+	title?: string;
 	channelTitle: string;
 }
 

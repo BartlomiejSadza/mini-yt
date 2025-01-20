@@ -1,10 +1,6 @@
 import { View, Text } from "react-native";
+import SettingsScreen from "screens/SettingsScreen/SettingsScreen";
 
-export default function SettingsScreen() {
-	return (
-		<View>
-			<Text>Settings Screen</Text>
-			{/* TODO: Whole screen */}
-		</View>
-	);
+export default function Settings() {
+	return <SettingsScreen />;
 }
