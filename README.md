@@ -1,50 +1,78 @@
-# Welcome to your Expo app 👋
+# 🎥 Mini YouTube Clone
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[![Expo](https://img.shields.io/badge/Expo-latest-blue.svg)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+[![React Native](https://img.shields.io/badge/React%20Native-latest-blue.svg)](https://reactnative.dev/)
+[![react-native-video](https://img.shields.io/badge/react--native--video-latest-blue.svg)](https://reactnative.dev/)
 
-## Get started
+A simplified YouTube clone built with React Native and Expo. This mobile application provides a streamlined video browsing experience with core YouTube-like functionality.
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+### 📲 Core Features
 
-2. Start the app
+- Video browsing and playback with custom video controls based on **react-native-video** lib
+- Horizontal scrolling video sections with categorized content
+- Search screen with filtering and sorting functionality
+- Detailed video view with statistics and descriptions
+- Login screen with navigation integration
 
-   ```bash
-    npx expo start
-   ```
+### 🎨 UI/UX Features
 
-In the output, you'll find options to open the app in a
+- Responsive layouts for all devices
+- Custom fonts implementation (Poppins)
+- Clean and modern interface
+- Loading state management
+- Section-based content organization
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🏗 Technical Architecture
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- `app/` - Expo Router configuration and main routes
+- `context/` - Global state management and context providers
+- `screens/` - Main screen components with business logic
+- `components/` - Reusable UI components (SearchBar, Section, VideoCard)
+- `modals/` - Modal components for overlays and popups
+- `styles/` - Global styling constants and theme configuration
+- `assets/` - Static resources
 
-## Get a fresh project
+## 🔧 Development Setup
 
-When you're ready, run:
+### Prerequisites
+
+- Node.js >= 16
+- npm or yarn
+- iOS Simulator / Android Emulator
+- Expo Go app for physical device testing
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run reset-project
+git clone https://github.com/BartlomiejSadza/mini-yt
+cd mini-yt
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Start development server:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+4. Run on platform:
 
-Join our community of developers creating universal apps.
+```bash
+# iOS
+npx expo run:ios
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# Android
+npx expo run:android
+```
+
+## 🤝 Pozdrawiam
