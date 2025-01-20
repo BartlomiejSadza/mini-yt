@@ -11,7 +11,7 @@ import { useVideo } from "contexts/VideoContext";
 import SearchBar from "components/SearchBar/SearchBar";
 import SectionVideoCard from "components/Section/SectionVideoCard/SectionVideoCard";
 import SearchScreenStyles from "./SearchScreenStyle";
-import SortModal from "modal/SortModal";
+import SortModal from "modals/SortModal";
 
 interface VideoItem {
 	id: {

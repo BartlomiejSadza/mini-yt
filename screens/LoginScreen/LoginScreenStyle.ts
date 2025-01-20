@@ -38,6 +38,7 @@ const LoginScreenStyle = StyleSheet.create({
 		fontSize: FontSizes.md,
 		textAlign: "center",
 		marginTop: 20,
+		lineHeight: 24,
 	},
 	titleImage: {
 		width: 290,
@@ -46,6 +47,10 @@ const LoginScreenStyle = StyleSheet.create({
 	logoImage: {
 		width: 128,
 		height: 128,
+	},
+	termsText: {
+		color: Colors.accent,
+		textDecorationLine: 'underline',
 	},
 });
 export default LoginScreenStyle;
