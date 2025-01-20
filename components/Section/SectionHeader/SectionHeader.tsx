@@ -1,18 +1,26 @@
 import { View, Text, TouchableOpacity } from "react-native";
+import { router } from "expo-router";
+import { useVideo } from "contexts/VideoContext";
 import SectionHeaderStyles from "./SectionHeaderStyles";
 
 type SectionHeaderProps = {
 	category: string;
-	// onShowMore?: () => void; // TODO ShowMore Link handle
 };
 
 export default function Section({ category }: SectionHeaderProps) {
+	const { setSearchQuery, searchVideos } = useVideo();
+
+	const handleShowMore = async () => {
+		await setSearchQuery(category);
+		await searchVideos(category);
+		router.push("/search");
+	};
+
 	return (
 		<View style={SectionHeaderStyles.sectionHeader}>
 			<Text style={SectionHeaderStyles.sectionTitle}>{category}</Text>
-			<TouchableOpacity>
+			<TouchableOpacity onPress={handleShowMore}>
 				<Text style={SectionHeaderStyles.showMore}>Show more</Text>
-				{/* TODO ShowMore Link handle */}
 			</TouchableOpacity>
 		</View>
 	);

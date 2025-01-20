@@ -1,17 +1,34 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import Colors from "styles/Colors";
 import { FontSizes } from "styles/Fonts";
 
+const THUMBNAIL_HEIGHT = {
+	home: 100,
+	search: 175,
+};
+
 const SectionVideoCardStyles = StyleSheet.create({
-	card: {
+	card_home: {
+		backgroundColor: Colors.white,
+		padding: 8,
+		elevation: 2,
+		maxWidth: 250,
+	},
+	card_search: {
 		backgroundColor: Colors.white,
 		marginHorizontal: 8,
 		padding: 8,
 		elevation: 2,
-	},
-	thumbnail: {
 		width: "100%",
-		height: 100,
+	},
+
+	thumbnailHome: {
+		height: THUMBNAIL_HEIGHT.home,
+		borderRadius: 12,
+	},
+	thumbnailSearch: {
+		height: THUMBNAIL_HEIGHT.search,
+		width: "100%",
 		borderRadius: 12,
 	},
 	cardTitle: {
@@ -26,10 +43,10 @@ const SectionVideoCardStyles = StyleSheet.create({
 		textAlign: "right",
 	},
 	cardChannel: {
+		marginTop: 16,
 		fontSize: FontSizes.xs,
-		fontWeight: "600",
+		fontWeight: "800",
 		color: Colors.accent,
-		marginVertical: 4,
 	},
 });
 

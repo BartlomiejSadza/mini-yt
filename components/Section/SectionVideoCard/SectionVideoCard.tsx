@@ -1,5 +1,5 @@
-import { Text, View, Image, TouchableOpacity } from "react-native";
-import { router } from "expo-router";
+import { Text, Image, TouchableOpacity } from "react-native";
+import { router, usePathname } from "expo-router";
 import SectionVideoCardStyles from "./SectionVideoCardStyles";
 
 type VideoCardProps = {
@@ -14,13 +14,22 @@ type VideoCardProps = {
 };
 
 export default function SectionVideoCard({ item }: VideoCardProps) {
+	const pathname = usePathname();
 	return (
 		<TouchableOpacity
 			onPress={() => router.push(`/vids/${item.id}`)}
-			style={SectionVideoCardStyles.card}>
+			style={
+				pathname === "/" ?
+					SectionVideoCardStyles.card_home
+				:	SectionVideoCardStyles.card_search
+			}>
 			<Image
 				source={{ uri: item.image }}
-				style={SectionVideoCardStyles.thumbnail}
+				style={
+					pathname === "/" ?
+						SectionVideoCardStyles.thumbnailHome
+					:	SectionVideoCardStyles.thumbnailSearch
+				}
 			/>
 			{item.channel && (
 				<Text style={SectionVideoCardStyles.cardChannel}>{item.channel}</Text>
