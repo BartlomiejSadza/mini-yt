@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import Colors from "styles/Colors";
-import { Fonts, FontSizes } from "styles/Fonts";
+import { FontSizes } from "styles/Fonts";
 
 const DescriptionStyle = StyleSheet.create({
 	contentContainer: {
@@ -41,19 +41,27 @@ const DescriptionStyle = StyleSheet.create({
 		marginBottom: 4,
 	},
 	statsRow: {
+		marginTop: 8,
 		flexDirection: "row",
-		justifyContent: "space-between",
+		justifyContent: "space-around",
 		color: Colors.white,
 	},
 	statItem: {
 		backgroundColor: Colors.accent,
 		padding: 8,
-		borderRadius: 4,
+		borderRadius: 12,
 		width: "45%",
 		alignItems: "center",
+		flexDirection: "row",
+		justifyContent: "space-evenly",
 	},
-	statText: {	
+	statText: {
 		color: Colors.white,
+		fontWeight: "bold",
+	},
+	icon: {
+		width: 20,
+		height: 20,
 	},
 });
 

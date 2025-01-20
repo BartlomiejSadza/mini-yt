@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import {
 	LoadingState,
@@ -61,10 +61,15 @@ export default function Description(): JSX.Element {
 	const { snippet, statistics } = video.items[0];
 
 	return (
-		<View style={styles.contentContainer}>
+		<View style={(styles.contentContainer, { flex: 1 })}>
 			<VideoHeader title={snippet.title} channelTitle={snippet.channelTitle} />
 			<VideoTabs />
-			<VideoDescription description={snippet.description} />
+			<ScrollView
+				style={{ flex: 1 }}
+				contentContainerStyle={{ flexGrow: 1 }}
+				showsVerticalScrollIndicator={true}>
+				<VideoDescription description={snippet.description} />
+			</ScrollView>
 			<VideoStats statistics={statistics} />
 		</View>
 	);
