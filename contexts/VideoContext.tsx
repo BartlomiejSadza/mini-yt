@@ -23,7 +23,7 @@ const VideoContext = createContext<VideoContextType | undefined>(undefined);
 
 export function VideoProvider({ children }: { children: ReactNode }) {
 	const [videos, setVideos] = useState<YouTubeItem[]>([]);
-	const [searchQuery, setSearchQuery] = useState("");
+	const [searchQuery, setSearchQuery] = useState("React Native");
 	// const [loading, setLoading] = useState(false);
 	// const [error, setError] = useState<string | null>(null);
 

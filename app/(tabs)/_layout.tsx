@@ -15,8 +15,7 @@ export default function TabLayout() {
 				tabBarLabelStyle: {
 					fontFamily: Fonts.Regular,
 					fontSize: FontSizes.md,
-					width: "auto",
-					flexShrink: 0,
+					flex: 1,
 				},
 				tabBarActiveTintColor: Colors.white,
 				tabBarInactiveTintColor: Colors.accent,
