@@ -9,7 +9,7 @@ export default function SettingsScreen() {
 
 	const toggleSwitch = () => {
 		setIsReminderEnabled((previousState) => !previousState);
-		alert("Reminder is " + (isReminderEnabled ? "enabled" : "disabled"));
+		alert("Reminder is " + (isReminderEnabled ? "disabled" : "enabled"));
 	};
 
 	return (

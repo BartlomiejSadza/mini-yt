@@ -5,29 +5,9 @@ import {
 	ReactNode,
 	useEffect,
 } from "react";
-import fetchVideos from "data/api_fetch";
-
-interface YouTubeItem {
-	kind: string;
-	etag: string;
-	id: {
-		kind: string;
-		videoId: string;
-	};
-	snippet: {
-		publishedAt: string;
-		channelId: string;
-		title: string;
-		description: string;
-		thumbnails: {
-			default: { url: string };
-			medium: { url: string };
-			high: { url: string };
-		};
-		channelTitle: string;
-		publishTime: string;
-	};
-}
+import { useQuery } from "@tanstack/react-query";
+import { fetchVideos } from "data/api_fetch";
+import { YouTubeItem } from "types/youTubeResponse";
 
 interface VideoContextType {
 	videos: YouTubeItem[];
@@ -43,25 +23,30 @@ const VideoContext = createContext<VideoContextType | undefined>(undefined);
 
 export function VideoProvider({ children }: { children: ReactNode }) {
 	const [videos, setVideos] = useState<YouTubeItem[]>([]);
-	const [searchQuery, setSearchQuery] = useState("");
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState<string | null>(null);
+	const [searchQuery, setSearchQuery] = useState("React Native");
+	// const [loading, setLoading] = useState(false);
+	// const [error, setError] = useState<string | null>(null);
 
-	useEffect(() => {
-		searchVideos("React native");
-	}, []);
+	const {
+		data,
+		isLoading,
+		isError,
+		error: queryError,
+		refetch,
+	} = useQuery({
+		queryKey: ["videos", searchQuery],
+		queryFn: () => fetchVideos(searchQuery),
+		enabled: !!searchQuery,
+	});
 
 	const searchVideos = async (query: string) => {
-		setLoading(true);
-		try {
-			const response = await fetchVideos(query);
-			setVideos(response);
-		} catch (err) {
-			setError(err instanceof Error ? err.message : "Search failed");
-		} finally {
-			setLoading(false);
-		}
+		setSearchQuery(query);
+		refetch();
 	};
+
+	useEffect(() => {
+		if (data) setVideos(data);
+	}, [data]);
 
 	return (
 		<VideoContext.Provider
@@ -71,8 +56,8 @@ export function VideoProvider({ children }: { children: ReactNode }) {
 				searchQuery,
 				setSearchQuery,
 				searchVideos,
-				loading,
-				error,
+				loading: isLoading,
+				error: isError ? (queryError as Error)?.message : null,
 			}}>
 			{children}
 		</VideoContext.Provider>
