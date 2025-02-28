@@ -1,5 +1,7 @@
 # 🎥 Mini YouTube Clone
 
+## link to YouTube video short showcase: https://www.youtube.com/shorts/OvPOh1RSv40
+
 [![Expo](https://img.shields.io/badge/Expo-latest-blue.svg)](https://expo.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 [![React Native](https://img.shields.io/badge/React%20Native-latest-blue.svg)](https://reactnative.dev/)
